@@ -1,0 +1,10 @@
+const mongoose = require('mongoose');
+
+const EmployeeSchema = new mongoose.Schema({
+  name: { type: String, required: true },  // Keep 'name' but accept username from frontend
+  email: { type: String, required: true },
+  password: { type: String, required: true }
+});
+
+const EmployeeModel = mongoose.model('employees', EmployeeSchema);
+module.exports = EmployeeModel;
