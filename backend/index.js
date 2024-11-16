@@ -303,29 +303,27 @@ app.post('/register',(req,res)=>{
 });
   
 
-app.get('/oauth2callback', async (req, res) => {
-  const code = req.query.code; // The authorization code from Google
+// app.get('/oauth2callback', async (req, res) => {
+//   const code = req.query.code; // The authorization code from Google
   
-  // Now, exchange the code for an access token or ID token
-  try {
-    const response = await axios.post('https://oauth2.googleapis.com/token', {
-      code,
-      client_id: 559798091838-e3ctusoeh6m8nopq2g9ruvfmha90bblb.apps.googleusercontent.com,
-      client_secret: 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,
-      redirect_uri: 'http://localhost:3001/oauth2callback',  // This should match the redirect URI in Google console
-      grant_type: 'authorization_code',
-    });
+//   // Now, exchange the code for an access token or ID token
+//   try {
+//     const response = await axios.post('https://oauth2.googleapis.com/token', {
+//       code,
+//       redirect_uri: 'http://localhost:3001/oauth2callback',  // This should match the redirect URI in Google console
+//       grant_type: 'authorization_code',
+//     });
 
-    const { access_token, id_token } = response.data;
+//     const { access_token, id_token } = response.data;
     
-    // Do something with the tokens (e.g., store in session or cookie)
-    res.json({ access_token, id_token });
+//     // Do something with the tokens (e.g., store in session or cookie)
+//     res.json({ access_token, id_token });
 
-  } catch (error) {
-    console.error("Error exchanging code for token", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
+//   } catch (error) {
+//     console.error("Error exchanging code for token", error);
+//     res.status(500).send("Internal Server Error");
+//   }
+// });
 
 
 app.listen(3001, () => {
