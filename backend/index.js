@@ -310,6 +310,8 @@ app.post('/register',(req,res)=>{
 //   try {
 //     const response = await axios.post('https://oauth2.googleapis.com/token', {
 //       code,
+//client_id: 559798091838-e3ctusoeh6m8nopq2g9ruvfmha90bblb.apps.googleusercontent.com,
+// client_secret: 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,
 //       redirect_uri: 'http://localhost:3001/oauth2callback',  // This should match the redirect URI in Google console
 //       grant_type: 'authorization_code',
 //     });
